@@ -11,3 +11,31 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
+
+Remove Element Solution
+
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+function removeElement(nums, val) {
+    let k = 0; // Counter for elements not equal to val
+
+    // Iterate through the array
+    for (let i = 0; i < nums.length; i++) {
+        // If the current element is not equal to val
+        if (nums[i] !== val) {
+            // Move it to the front of the array
+            nums[k] = nums[i];
+            k++; // Increment the counter
+        }
+    }
+
+    return k; // Return the number of elements not equal to val
+}
+
+// Test cases
+console.log(removeElement([3,2,2,3], 3)); // Output: 2
+console.log(removeElement([0,1,2,2,3,0,4,2], 2)); // 
